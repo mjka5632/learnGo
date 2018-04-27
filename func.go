@@ -10,54 +10,59 @@ import (
 /**
 函数相关
  */
-func swap(a,b int) (int,int) {
+//转换
+func swap(a, b int) (int, int) {
 
-	return b,a
+	return b, a
+
+}
+
+//转换 指针
+func swap2(a, b *int) {
+
+	*a, *b = *b, *a
 
 }
 
-func swap2(a,b *int)  {
-
-	 *a,*b=*b,*a
-
-}
-func eval(a,b int,op string)  (int,error){
+//switch计算机功能
+func eval(a, b int, op string) (int, error) {
 	switch op {
 	case "+":
-		return a+b,nil
+		return a + b, nil
 	case "-":
-		return a-b,nil
+		return a - b, nil
 	case "*":
-		return a*b,nil
+		return a * b, nil
 	case "/":
-		return a/b,nil
+		return a / b, nil
 	default:
-		return 0,fmt.Errorf("Not found op:%s",op)
+		return 0, fmt.Errorf("Not found op:%s", op)
 
 	}
 
 }
-func div(a,b int) (q,r int) {
+func div(a, b int) (q, r int) {
 	//q=a/b
 	//r=a%b
-	return a/b,a%b
+	return a / b, a % b
 
 }
 
-func apply(op func(int,int) int,a,b int) int {
+//嵌套函数
+func apply(op func(int, int) int, a, b int) int {
 	//拿到opName
-	p:=reflect.ValueOf(op).Pointer()
-	opName:=runtime.FuncForPC(p).Name()
+	p := reflect.ValueOf(op).Pointer()
+	opName := runtime.FuncForPC(p).Name()
 	fmt.Printf("Calling function %s with args"+
-		"(%d,%d)\n",opName,a,b)
+		"(%d,%d)\n", opName, a, b)
 
-	return op(a,b)
+	return op(a, b)
 
 }
 func sum(numbers ...int) int {
-	s:=0
-	for i:=range numbers{
-		s+=numbers[i]
+	s := 0
+	for i := range numbers {
+		s += numbers[i]
 
 	}
 	return s
@@ -65,20 +70,21 @@ func sum(numbers ...int) int {
 }
 
 func main() {
-	a,b:=5,6
-	swap2(&a,&b)
-	fmt.Println(a,b)
+	a, b := 5, 6
+	//&用来取内存地址
+	swap2(&a, &b)
+	fmt.Println(a, b)
 
-	if result,error:=eval(4,3,"]"); error!=nil{
-		fmt.Println("errot",error)
-	}else {
+	if result, error := eval(4, 3, "]"); error != nil {
+		fmt.Println("errot", error)
+	} else {
 		fmt.Println(result)
 	}
-	q,r:=div(13,4)
+	q, r := div(13, 4)
 	fmt.Println(
-		sum(1,2,3,4,5),
+		sum(1, 2, 3, 4, 5),
 		//eval(3,4,"+"),
-q,r,
+		q, r,
 
 	)
 
@@ -86,6 +92,6 @@ q,r,
 
 	fmt.Println(apply(
 		func(a int, b int) int {
-			return int(math.Pow(float64(a),float64(b)))
-		},3,4, ))
+			return int(math.Pow(float64(a), float64(b)))
+		}, 3, 4, ))
 }

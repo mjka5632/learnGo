@@ -5,11 +5,13 @@ import (
 	"fmt"
 )
 
-func grade(score int) string{
+//根据分数进行评级
+func grade(score int) string {
+	//初始化评级值
 	g := ""
 	switch {
-	case score>100 || score<0:
-		panic(fmt.Sprintf("Wrong score:%d",score))
+	case score > 100 || score < 0:
+		panic(fmt.Sprintf("Wrong score:%d", score))
 
 	case score < 60:
 		g = "F"
