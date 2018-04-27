@@ -1,7 +1,7 @@
 package main
 
 import (
-	"studygolang/sorter"
+	"learnGo/sorter"
 	"fmt"
 )
 

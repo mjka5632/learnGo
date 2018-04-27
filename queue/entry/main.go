@@ -1,8 +1,9 @@
 package main
 
 import (
-	"studygolang/queue"
+
 	"fmt"
+	"learnGo/queue"
 )
 
 func main() {

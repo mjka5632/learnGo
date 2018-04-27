@@ -1,7 +1,7 @@
 package main
 
 import (
-	"studygolang/tree"
+	"learnGo/tree"
 	"fmt"
 )
 

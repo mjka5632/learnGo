@@ -1,10 +1,11 @@
 package main
 
 import (
-	"studygolang/retriever/mock"
-	"studygolang/retriever/real"
+
 	"fmt"
 	"time"
+	"learnGo/retriever/mock"
+	"learnGo/retriever/real"
 )
 
 //定义接口
