@@ -3,11 +3,13 @@ package main
 import (
 	"learnGo/tree"
 	"fmt"
+	"golang.org/x/tools/container/intsets"
 )
 
 type myTreeNode struct {
 	node *tree.Node
 }
+
 //组合的形式拓展已有类型
 func (myNode *myTreeNode) postOrder() {
 	if myNode == nil || myNode.node == nil {
@@ -19,6 +21,16 @@ func (myNode *myTreeNode) postOrder() {
 	right.postOrder()
 
 	myNode.node.Print()
+
+}
+func testSparse() {
+	s := intsets.Sparse{}
+
+	s.Insert(1)
+	s.Insert(1000)
+	s.Insert(10000000000000000)
+	fmt.Println(s.Has(1000))
+	fmt.Println(s.Has(10000000000000))
 
 }
 func main() {
@@ -42,4 +54,6 @@ func main() {
 	fmt.Print()
 	myRoot := myTreeNode{&root}
 	myRoot.postOrder()
+
+	testSparse()
 }
