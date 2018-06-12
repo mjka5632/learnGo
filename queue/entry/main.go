@@ -19,4 +19,5 @@ func main() {
 
 	//q.Push("aa")
 	//fmt.Println(q.Pop())
+	//s:=inserts.S
 }

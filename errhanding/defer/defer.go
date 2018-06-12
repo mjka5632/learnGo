@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"bufio"
+	"learnGo/functional/fib"
 )
 
 func tryDefer() {

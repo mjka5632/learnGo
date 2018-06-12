@@ -31,6 +31,12 @@ func testSparse() {
 	s.Insert(10000000000000000)
 	fmt.Println(s.Has(1000))
 	fmt.Println(s.Has(10000000000000))
+	//10000000000000
+
+
+
+
+
 
 }
 func main() {

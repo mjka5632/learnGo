@@ -3,8 +3,11 @@ package main
 import "fmt"
 
 type specialString string
+type flag bool
 
+var tf flag
 var whatIsThis specialString = "hello"
+
 
 func TypeSwitch() {
 	testFuc := func(any interface{}) {
@@ -15,11 +18,13 @@ func TypeSwitch() {
 			fmt.Printf("Type is %T\n", v)
 		case specialString:
 			fmt.Printf("Type is %T\n", v)
+		case flag:
+			fmt.Printf("Type is %T\n", v)
 		default:
 			fmt.Println("Unknown Type!")
 		}
 	}
-	testFuc(whatIsThis)
+	testFuc(tf)
 }
 
 func main() {
