@@ -16,7 +16,6 @@ func (tn *TwoInts) AddToParam(param int) int {
 	return tn.a + tn.b + param
 }
 func main() {
-
 	t1 := new(TwoInts)
 	t1.a = 12
 	t1.b = 10

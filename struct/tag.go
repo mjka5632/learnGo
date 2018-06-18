@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-type TagType struct {
+type TagType struct {//尾部是tags
 	f1 bool   "f1 ..."
 	f2 string "f2 sss"
 	f3 int    "f3 iiiiii"

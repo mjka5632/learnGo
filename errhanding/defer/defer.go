@@ -19,7 +19,8 @@ func writeFile(filename string) {
 	//create newWriter开了
 	// 就需要defer关掉
 	file, err := os.OpenFile(filename, os.O_EXCL|os.O_CREATE, 0666)
-	//err=errors.New("this is a custom error")
+	//file, err := os.Create(filename)
+	//err=errors.New("this is a custom error")/
 	if err != nil {
 		//fmt.Println("file already exists")
 		//fmt.Println("Error:",err)
@@ -44,6 +45,6 @@ func writeFile(filename string) {
 	}
 }
 func main() {
-	writeFile("aa")
+	writeFile("aa1.txt")
 	//tryDefer()
 }
