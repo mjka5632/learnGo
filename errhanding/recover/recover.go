@@ -17,6 +17,7 @@ func tryRecover() {
 	//panic(errors.New("this is an error"))
 
 	//b:=0
+	//5/0 直接编译错误，没有运行
 	//a := 5 / b
 	//fmt.Println(a)
 

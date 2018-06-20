@@ -2,11 +2,14 @@ package filelisting
 
 import (
 	"net/http"
+	"strings"
 	"os"
 	"io/ioutil"
-	"strings"
 )
 
+/**
+web显示文件内容
+ */
 const prefix = "/list/"
 
 type userError string
