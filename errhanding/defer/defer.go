@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"os"
 	"bufio"
+	"fmt"
 	"learnGo/functional/fib"
+	"os"
 )
 
 func tryDefer() {

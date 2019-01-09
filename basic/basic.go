@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"runtime"
+	"math"
 	"os"
+	"runtime"
 )
 
 //变量命名规则遵循骆驼命名法，首个字母小写，其余单词首字母大写【外部包所用需要首字母也大写】
@@ -15,6 +16,17 @@ var (
 	//[+]可以连接字符
 	hi = "hel" + "lo"
 )
+
+func triangle() {
+	var a, b int = 3, 4
+	fmt.Println(calcTriangle(a, b))
+}
+
+func calcTriangle(a, b int) int {
+	var c int
+	c = int(math.Sqrt(float64((a*a + b*b))))
+	return c
+}
 
 //常量和枚举
 func enums() {
